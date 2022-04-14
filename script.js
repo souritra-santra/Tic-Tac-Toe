@@ -44,15 +44,16 @@ const play = (event) => {
 
         for (let i = 1; i <= 3; i++) {
             s = i;
-            match = true;
-            // if ((document.getElementById("box-" + s).innerHTML == "O") || (document.getElementById("box-" + s).innerHTML == "X")) {
-            for (let j = 1; j < 3; j++) {
-                if (document.getElementById("box-" + (s)).innerHTML != document.getElementById("box-" + (s = s + 3)).innerHTML) {
-                    match = false;
-                    break;
+            match = false;
+            if ((document.getElementById("box-" + s).innerHTML == "O") || (document.getElementById("box-" + s).innerHTML == "X")) {
+                match = true;
+                for (let j = 1; j < 3; j++) {
+                    if (document.getElementById("box-" + (s)).innerHTML != document.getElementById("box-" + (s = s + 3)).innerHTML) {
+                        match = false;
+                        break;
+                    }
                 }
             }
-            // }
             if (match && (document.getElementById("box-" + (s + 1)).innerHTML == "X" || "O")) {
                 winner = (document.getElementById("box-" + (s)).innerHTML == "X") ? "Player1" : "Player2";
                 finish = true;
