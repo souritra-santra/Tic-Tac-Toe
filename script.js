@@ -47,7 +47,7 @@ const play = (event) => {
             match = false;
             if ((document.getElementById("box-" + s).innerHTML == "O") || (document.getElementById("box-" + s).innerHTML == "X")) {
                 match = true;
-                for (let j = 1; j <= 3; j++) {
+                for (let j = 1; j < 3; j++) {
                     if (document.getElementById("box-" + (s)).innerHTML != document.getElementById("box-" + (s = s + 3)).innerHTML) {
                         match = false;
                         break;
