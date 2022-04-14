@@ -54,7 +54,7 @@ const play = (event) => {
                     }
                 }
             }
-            if (match && (document.getElementById("box-" + (s + 1)).innerHTML == "X" || "O")) {
+            if (match) {
                 winner = (document.getElementById("box-" + (s)).innerHTML == "X") ? "Player1" : "Player2";
                 finish = true;
                 console.log("2 " + s);
